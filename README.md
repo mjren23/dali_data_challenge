@@ -64,7 +64,7 @@ List of all actions: ['Catch',  'Goal',  'Throwaway',  'Pull',  'D',  'OpponentC
 
 To actually perform the regression, we first min-max normalize our data to account for the variation in frequency of different events. We then split our dataset 80/20 train/test and train our linear model. Analyzing the results - we have a mean squared error of 33.5 for the particular run I’m exploring, although it depends on the random split of training and test data. Our mean absolute error is around 4.6 (lower than the square root of 33.5), giving us a sense that we have some outliers in our test data. We can interpret the MAE as the model having around a 5-point error on the difference in scores at the end of a game. This might seem high, but considering the range that most score differentials fall in (IQR = 9, overall range is ~60), our model isn’t doing too bad. If we graph the predicted value of the point margin v.s. the actual value, we can also see that they correlate pretty well. 
 
-![pred_actual](pred_actual.png)
+![pred_actual](part_two/pred_actual.png)
 
 Lastly, our Pearson correlation coefficient is in the range of 0.62, implying a fairly strong relationship our predicted and actual values — as the actual value of the point margin increases, so does our predicted value. Note though that this value changes (fluctuating from ~0.5-0.8) as the random sorting of data points into test and training sets changes, since our dataset is relatively small. 
 
